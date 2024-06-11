@@ -1,6 +1,6 @@
 const { Telegraf } = require("telegraf");
-const token = "token";
-const bot = new Telegraf(token);
+require("dotenv").config();
+const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 const web_link = "https://giraffe-rho.vercel.app/";
 bot.start((ctx) =>
