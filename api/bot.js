@@ -1,7 +1,7 @@
 const { Telegraf } = require("telegraf");
-const path = require("path");
-require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
-
+// const path = require("path");
+// require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+require("dotenv").config();
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 const web_link = "https://giraffe-rho.vercel.app/";
