@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/bot.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "my-create-react-app/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "my-create-react-app/build" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/bot.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/my-create-react-app/build/$1"
+    }
+  ]
+}
